@@ -53,6 +53,9 @@ namespace Ray.Serilog.Sinks.PushPlusBatched
 
         public override HttpResponseMessage DoSend()
         {
+            //提取字数 防止超越字数限制
+            int amount=20000;
+            amount=Msg.Length>amount?amount:Msg.Length;
             var json = new
             {
                 token = _token,
@@ -62,7 +65,7 @@ namespace Ray.Serilog.Sinks.PushPlusBatched
                 webhook = _webhook,
 
                 title = Title,
-                content = Msg,
+                content = Msg.Substring(0,amount),
 
                 template = PushPlusMsgType.html.ToString()
             }.ToJson();
