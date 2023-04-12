@@ -59,7 +59,7 @@ namespace Ray.Serilog.Sinks.PushPlusBatched
             Msg = Msg.Replace("　", "");
             Msg = Msg.Replace("\r\n", "\n");
             Msg = Msg.Replace("\n\n", "\n");
-            Msg=Msg.Length>amount?amount:Msg.Length;
+            amount = Msg.Length>amount?amount:Msg.Length;
             var json = new
             {
                 token = _token,
