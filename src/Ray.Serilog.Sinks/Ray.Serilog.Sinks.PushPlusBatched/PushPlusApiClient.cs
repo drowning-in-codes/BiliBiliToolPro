@@ -55,7 +55,11 @@ namespace Ray.Serilog.Sinks.PushPlusBatched
         {
             //提取字数 防止超越字数限制
             int amount=20000;
-            amount=Msg.Length>amount?amount:Msg.Length;
+            Msg = Msg.Replace(" ", "");
+            Msg = Msg.Replace("　", "");
+            Msg = Msg.Replace("\r\n", "\n");
+            Msg = Msg.Replace("\n\n", "\n");
+            Msg=Msg.Length>amount?amount:Msg.Length;
             var json = new
             {
                 token = _token,
