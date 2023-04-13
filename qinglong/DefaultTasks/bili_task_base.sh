@@ -34,7 +34,7 @@ else
     }
 fi
 
-bili_repo="raywangqvq_bilibilitoolpro"
+bili_repo="drowning-in-codes_BiliBiliToolPro"
 
 echo -e "\nrepo目录: $dir_repo"
 bili_repo_dir="$(find $dir_repo -type d -iname $bili_repo | head -1)"
