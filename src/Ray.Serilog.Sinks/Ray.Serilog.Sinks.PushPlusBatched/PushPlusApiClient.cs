@@ -68,10 +68,7 @@ namespace Ray.Serilog.Sinks.PushPlusBatched
             Msg = Msg.Replace("\n\n", "\n");
             amount = Msg.Length>amount?amount:Msg.Length;
             
-            //debug
-            SelfLog.WriteLine(Msg.Length.ToString());
-            SelfLog.WriteLine(amount.ToString());
-            SelfLog.WriteLine(Msg.Substring(0,amount));
+           
             var json = new
             {
                 token = _token,
