@@ -1,4 +1,4 @@
-using System.Net.Http;
+﻿using System.Net.Http;
 using Ray.Serilog.Sinks.Batched;
 using System;
 using System.Collections.Generic;
@@ -69,8 +69,8 @@ namespace Ray.Serilog.Sinks.PushPlusBatched
             amount = Msg.Length>amount?amount:Msg.Length;
             
             //debug
-            SelfLog.WriteLine(Msg.Length);
-            SelfLog.WriteLine(amount);
+            SelfLog.WriteLine(Msg.Length.ToString());
+            SelfLog.WriteLine(amount.ToString());
             SelfLog.WriteLine(Msg.Substring(0,amount));
             var json = new
             {
