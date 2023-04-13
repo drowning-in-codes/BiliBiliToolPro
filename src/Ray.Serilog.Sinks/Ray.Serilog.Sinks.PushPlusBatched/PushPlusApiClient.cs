@@ -1,8 +1,15 @@
-﻿using System;
 using System.Net.Http;
-using System.Text;
 using Ray.Serilog.Sinks.Batched;
-
+using System;
+using System.Collections.Generic;
+using System.IO;
+using System.Linq;
+using System.Text;
+using Serilog.Core;
+using Serilog.Debugging;
+using Serilog.Events;
+using Serilog.Formatting;
+using Serilog.Formatting.Display;
 namespace Ray.Serilog.Sinks.PushPlusBatched
 {
     public class PushPlusApiClient : PushService
